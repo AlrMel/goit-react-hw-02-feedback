@@ -1,20 +1,30 @@
-import { Counter } from "./Counter";
+import { Component } from 'react';
+// import { Counter } from "./Counter";
 
-export const App = () => {
-  return (
-    <div
-      // style={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   justifyContent: 'center',
-      //   alignItems: 'center',
-      //   fontSize: 40,
-      //   color: '#010101'
-      // }}
-    >
+export class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
+  hendelIncrement = () => {};
 
-      <Counter />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+        <h1>Cafe Expresso</h1>
+        <h2>Please leave feedback</h2>
+        <button>Good</button>
+        <button>neutral</button>
+        <button>bad</button>
+        <h2>Statistics</h2>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+
+        {/* <Counter /> */}
+      </div>
+    );
+  }
+}
