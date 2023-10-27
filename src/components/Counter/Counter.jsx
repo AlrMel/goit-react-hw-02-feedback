@@ -15,7 +15,20 @@ export class Counter extends Component {
     });
   };
 
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad;
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    const total = this.countTotalFeedback();
+    if (total === 0) {
+      return 0;
+    }
+    return Math.round((this.state.good * 100) / total);
+  };
+
   render() {
+    const { good, neutral, bad } = this.state;
     return (
       <div>
         <h1>Cafe Expresso</h1>
@@ -25,16 +38,12 @@ export class Counter extends Component {
         <button onClick={() => this.hendelIncrement('bad')}>bad</button>
         <h2>Statistics</h2>
         <ul>
-          <li>
-            <span>Good: {this.state.good}</span>
-          </li>
-          <li>
-            <span>Neutral: {this.state.neutral}</span>
-          </li>
-          <li>
-            <span>Bad: {this.state.bad}</span>
-          </li>
+          <li>Good: {good}</li>
+          <li>Neutral: {neutral}</li>
+          <li>Bad: {bad}</li>
         </ul>
+        <span style={{fontWeight: 'bold', paddingRight: 20}}>{this.countTotalFeedback()}</span>
+        <span style={{fontWeight: 'lighter'}} >{this.countPositiveFeedbackPercentage()}</span>
       </div>
     );
   }
