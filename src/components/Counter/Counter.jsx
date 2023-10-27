@@ -42,8 +42,8 @@ export class Counter extends Component {
           <li>Neutral: {neutral}</li>
           <li>Bad: {bad}</li>
         </ul>
-        <span style={{fontWeight: 'bold', paddingRight: 20}}>{this.countTotalFeedback()}</span>
-        <span style={{fontWeight: 'lighter'}} >{this.countPositiveFeedbackPercentage()}</span>
+        <span style={{fontWeight: 'bold', paddingRight: 12}}>Total: {this.countTotalFeedback()}</span>
+        <span style={{fontWeight: 'lighter'}} >Positive feedback: {this.countPositiveFeedbackPercentage()}</span>
       </div>
     );
   }
