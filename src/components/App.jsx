@@ -2,7 +2,9 @@ import { Component } from 'react';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOption/FeedbackOptions';
 import Section from './Section/Section';
-// import { Counter } from './Counter/Counter';
+import Notification from './Notification/Notification';
+import css from './App.module.css'
+
 
 export class App extends Component {
   state = {
@@ -36,25 +38,27 @@ export class App extends Component {
 
     return (
       <div>
-        <Section title="Say something, please!">
-        <h1>Cafe Expresso</h1>
-        <h2>Please leave feedback</h2>
+        <Section title='Cafe Expresso'>
+        
+        <h2 className={css.subTitle}>Please leave feedback</h2>
 
         <FeedbackOptions
           options={options}
           onLeaveFeedback={this.hendelIncrement}
         />
 
-        <h2 className="">Statistics</h2>
+        <h2 className={css.subTitle}>Statistics</h2>
         
-        <Statistics
+        {this.countTotalFeedback() ? <Statistics
           good={good}
           neutral={neutral}
           bad={bad}
           total={this.countTotalFeedback()}
           positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
+        /> : <Notification message="There is no feedback"></Notification>}
         </Section>
+        
+        
       </div>
     );
   }

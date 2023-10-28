@@ -1,0 +1,13 @@
+.section {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 24px 16px;
+}
+
+.mainTitle {
+    margin-bottom: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}

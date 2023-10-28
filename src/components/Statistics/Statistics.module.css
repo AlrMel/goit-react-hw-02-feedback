@@ -1,0 +1,14 @@
+.listStatistics li {
+    padding-left: 12px;
+    margin-bottom: 4px;
+}
+
+.totalStatistics {
+    margin-top: 8px;
+    font-weight: bold;
+
+}
+
+.positiveStatistics {
+    font-weight: bold;
+}

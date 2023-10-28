@@ -1,0 +1,12 @@
+.btnWrap {
+display: flex;
+flex-direction: row;
+gap: 8px;
+justify-content: space-evenly;
+}
+
+.btnFeedback {
+min-width: 60px;
+padding: 4px 8px;
+margin-bottom: 24px;
+}
