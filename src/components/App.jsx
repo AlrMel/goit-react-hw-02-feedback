@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOption/FeedbackOptions';
+import Section from './Section/Section';
 // import { Counter } from './Counter/Counter';
 
 export class App extends Component {
@@ -35,6 +36,7 @@ export class App extends Component {
 
     return (
       <div>
+        <Section title="Say something, please!">
         <h1>Cafe Expresso</h1>
         <h2>Please leave feedback</h2>
 
@@ -52,6 +54,7 @@ export class App extends Component {
           total={this.countTotalFeedback()}
           positivePercentage={this.countPositiveFeedbackPercentage()}
         />
+        </Section>
       </div>
     );
   }
